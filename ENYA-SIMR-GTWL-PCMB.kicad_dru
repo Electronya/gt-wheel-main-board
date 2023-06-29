@@ -1,0 +1,27 @@
+(version 1)
+
+(rule "90R Diff External Width & Gap"
+	(layer outer)
+	(condition "A.NetClass == 'USB'")
+	(constraint track_width (min 7mil) (opt 11mil) (max 11mil))
+	(constraint diff_pair_gap (min 6.61mil) (opt 6.62mil) (max 6.63mil)))
+
+(rule "90R Diff External Clearance"
+	(layer outer)
+	(condition "A.NetClass == 'USB' && B.Type == 'Zone'")
+	(constraint clearance (min 33mil)))
+
+(rule "90R Diff Internal Width & Gap"
+	(layer inner)
+	(condition "A.NetClass == 'USB'")
+	(constraint track_width (min 7mil) (opt 7mil) (max 7mil))
+	(constraint diff_pair_gap (min 6.27mil) (opt 6.28mil) (max 6.29mil)))
+
+(rule "90R Diff Internal Clearance"
+	(layer inner)
+	(condition "A.NetClass == 'USB' && B.Type == 'Zone'")
+	(constraint clearance (min 31mil)))
+
+(rule "90R Diff Skew"
+	(condition "A.NetClass == 'USB'")
+	(constraint skew (max 1.1mm)))
