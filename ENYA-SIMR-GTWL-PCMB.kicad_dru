@@ -7,7 +7,7 @@
 	(constraint diff_pair_gap (min 6.61mil) (opt 6.62mil) (max 6.63mil)))
 
 (rule "90R Diff External Clearance"
-	(layer outer)
+	(layer SIG.PWR_1)
 	(condition "A.NetClass == 'USB' && B.Type == 'Zone'")
 	(constraint clearance (min 33mil)))
 
@@ -18,9 +18,9 @@
 	(constraint diff_pair_gap (min 6.27mil) (opt 6.28mil) (max 6.29mil)))
 
 (rule "90R Diff Internal Clearance"
-	(layer inner)
+	(layer SIG.PWR_2)
 	(condition "A.NetClass == 'USB' && B.Type == 'Zone'")
-	(constraint clearance (min 31mil)))
+	(constraint clearance (min 33mil)))
 
 (rule "90R Diff Skew"
 	(condition "A.NetClass == 'USB'")
